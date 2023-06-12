@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="RPG_Notebook.ResItemUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RPG_Notebook"
+             mc:Ignorable="d" Height="72" Width="115">
+    <Grid Background="White" Margin="0,0,-9,-9">
+        <Image x:Name="res_item_image" HorizontalAlignment="Left" Height="54" Margin="15,12,0,0" VerticalAlignment="Top" Width="65" Source="/Burn Damage - Copy.png"/>
+        <Label x:Name="res_item_value" Content="+3" HorizontalAlignment="Left" Margin="74,18,0,0" VerticalAlignment="Top" FontSize="24" Foreground="Black"/>
+        <Border BorderBrush="Black" BorderThickness="1"/>
+    </Grid>
+</UserControl>

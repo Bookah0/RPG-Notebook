@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>RPG_Notebook</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Burn Damage - Copy.png" />
+    <None Remove="Burn Damage.png" />
+    <None Remove="card-draw.png" />
+    <None Remove="game_skill_ui_guard_shield-512.png" />
+    <None Remove="game_skill_ui_slow_speed_down-512.png" />
+    <None Remove="hand-fist-power-256.png" />
+    <None Remove="Icon.1_01.png" />
+    <None Remove="Icon.4_57.png" />
+    <None Remove="Icons\Burn Damage.png" />
+    <None Remove="light_effect_flash_motion_abstract-256.png" />
+    <None Remove="Ment2.png" />
+    <None Remove="Phys.png" />
+    <None Remove="Sweep.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Burn Damage.png" />
+    <Resource Include="Icons\Burn Damage - Copy.png" />
+    <Resource Include="Icons\Burn Damage.png" />
+    <Resource Include="Icons\card-draw.png" />
+    <Resource Include="Icons\game_skill_ui_guard_shield-512.png" />
+    <Resource Include="Icons\game_skill_ui_slow_speed_down-512.png" />
+    <Resource Include="Icons\hand-fist-power-256.png" />
+    <Resource Include="Icons\Icon.1_01.png" />
+    <Resource Include="Icons\Icon.4_57.png" />
+    <Resource Include="Icons\light_effect_flash_motion_abstract-256.png" />
+    <Resource Include="Icons\Ment2.png" />
+    <Resource Include="Icons\Phys.png" />
+    <Resource Include="Icons\Sweep.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

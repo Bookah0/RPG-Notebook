@@ -1,0 +1,71 @@
+﻿<Window x:Class="RPG_Notebook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPG_Notebook"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="719.7" Width="1280">
+    <Grid Background="#FF676443">
+        <Grid x:Name="stats_grid" Margin="42,577,687,26" Background="#FFB5B5B5">
+            <Image HorizontalAlignment="Left" Height="60" Margin="48,12,0,0" VerticalAlignment="Top" Width="54" Source="/Icons/Phys.png"/>
+            <TextBox HorizontalAlignment="Left" Margin="16,22,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="32" FontSize="24"/>
+            <Image HorizontalAlignment="Left" Height="60" Margin="153,12,0,0" VerticalAlignment="Top" Width="54" Source="/Icons/Ment2.png"/>
+            <TextBox HorizontalAlignment="Left" Margin="121,22,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="32" FontSize="24"/>
+            <Image HorizontalAlignment="Left" Height="60" Margin="257,12,0,0" VerticalAlignment="Top" Width="54" Source="/Icons/Icon.4_57.png"/>
+            <TextBox HorizontalAlignment="Left" Margin="225,22,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="32" FontSize="24"/>
+            <Image HorizontalAlignment="Left" Height="60" Margin="376,12,0,0" VerticalAlignment="Top" Width="54" Source="/Icons/Sweep.png"/>
+            <TextBox HorizontalAlignment="Left" Margin="344,22,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="32" FontSize="24"/>
+            <Image HorizontalAlignment="Left" Height="60" Margin="483,12,0,0" VerticalAlignment="Top" Width="54" Source="/Icons/Icon.1_01.png"/>
+            <TextBox HorizontalAlignment="Left" Margin="451,22,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="32" FontSize="24"/>
+            <Label Content="PHYS" HorizontalAlignment="Left" Margin="52,65,0,0" VerticalAlignment="Top" FontSize="14" FontStyle="Normal" FontWeight="Bold" Foreground="#FF67432E"/>
+            <Label Content="MENT" HorizontalAlignment="Left" Margin="157,65,0,0" VerticalAlignment="Top" FontSize="14" FontStyle="Normal" FontWeight="Bold" Foreground="#FF173A56"/>
+            <Label Content="AGIL" HorizontalAlignment="Left" Margin="263,65,0,0" VerticalAlignment="Top" FontSize="14" FontStyle="Normal" FontWeight="Bold" Foreground="#FF20481F"/>
+            <Label Content="INIT" HorizontalAlignment="Left" Margin="384,65,0,0" VerticalAlignment="Top" FontSize="14" FontStyle="Normal" FontWeight="Bold" Foreground="#FF351756"/>
+            <Label Content="HP" HorizontalAlignment="Left" Margin="495,65,0,0" VerticalAlignment="Top" FontSize="14" FontStyle="Normal" FontWeight="Bold" Foreground="#FF7D2222"/>
+            <Border BorderBrush="Black" BorderThickness="1" d:IsLocked="True"/>
+        </Grid>
+        <TextBox x:Name="name_textbox" Text="Name" Margin="370,77,370,587" FontSize="25" TextAlignment="Center"/>
+        <TextBox x:Name="region_textbox" Text="Region" Margin="408,116,640,552" FontSize="20" TextAlignment="Center"/>
+        <TextBox x:Name="type_textbox" Text="Type" Margin="645,117,403,552" FontSize="20" TextAlignment="Center" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.632,-1.278"/>
+        <Grid x:Name="image_grid" Margin="42,181,687,146" Background="White"/>
+        <Grid x:Name="loot_grid" Margin="665,577,50,26" Background="#FFF9F7B6">
+            <Button Content="Add loot" HorizontalAlignment="Left" Margin="449,8,0,72" Width="106"/>
+            <Label Content="Loot" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsEnabled="False" FontSize="16" Foreground="Black" FontFamily="Sitka Display" FontWeight="Bold"/>
+        </Grid>
+        <Grid x:Name="res_grid" Margin="665,181,50,335" Background="#FFF7E6DE">
+            <Button x:Name="add_res_button" Content="Add resistance" HorizontalAlignment="Left" Margin="450,11,0,0" VerticalAlignment="Top" Height="23" Width="105" Click="OpenResPanels"/>
+            <Label Content="Resistances" HorizontalAlignment="Left" Margin="54,7,0,0" VerticalAlignment="Top" IsEnabled="False" FontSize="16" Foreground="Black" FontFamily="Sitka Display" FontWeight="Bold"/>
+            <WrapPanel x:Name="res_overview_wrappanel" Margin="10,48,10,10"/>
+        </Grid>
+        <Grid Margin="665,374,50,143" Background="#FFD2D7FB">
+            <Button x:Name="add_res_button1" Content="Add ability" HorizontalAlignment="Left" Margin="450,10,0,0" VerticalAlignment="Top" Height="23" Width="105" Click="OpenResPanels"/>
+            <Label Content="Abilities" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsEnabled="False" FontSize="16" Foreground="Black" FontFamily="Sitka Display" FontWeight="Bold"/>
+            <WrapPanel x:Name="res_overview_wrappanel1" Margin="10,38,10,10"/>
+            <Border BorderBrush="Black" BorderThickness="1" d:IsLocked="True"/>
+        </Grid>
+        <Grid x:Name="res_type_modalpanel" Margin="59,97,704,237" Background="#FFF7E6DE">
+            <CheckBox x:Name="res_filter_physical" Content="Physical" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="114" FontSize="20" Checked="filter_checked"/>
+            <CheckBox x:Name="res_filter_magic" Content="Magic" HorizontalAlignment="Left" Margin="129,10,0,0" VerticalAlignment="Top" Height="35" Width="114" FontSize="20" Checked="filter_checked"/>
+            <CheckBox x:Name="res_filter_conditions" Content="Conditions" HorizontalAlignment="Left" Margin="243,10,0,0" VerticalAlignment="Top" Height="35" Width="114" FontSize="20" Checked="filter_checked"/>
+            <CheckBox x:Name="res_filter_all" Content="All" HorizontalAlignment="Left" Margin="398,10,0,0" VerticalAlignment="Top" Height="35" Width="114" FontSize="20"/>
+            <WrapPanel x:Name="res_types_wrappanel" Margin="10,50,10,10"/>
+            <Button x:Name="close_choose_res_type" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="35" FontSize="24" Margin="482,1,0,0"/>
+            <Border BorderBrush="Black" BorderThickness="1" d:IsLocked="True"/>
+        </Grid>
+        <Grid Name="res_add_modalpanel" Margin="98,440,742,77" Background="#FFF7E6DE">
+            <Border BorderBrush="Black" BorderThickness="1" d:IsLocked="True"/>
+            <Image x:Name="selected_res_image" HorizontalAlignment="Left" Height="100" Margin="41,28,0,0" VerticalAlignment="Top" Width="100" Source="Icons/Burn Damage.png" MouseDown="OpenTypesPanels"/>
+            <Label x:Name="selected_res_type" Content="Burn damage" HorizontalAlignment="Left" Margin="-6,131,0,0" VerticalAlignment="Top" IsEnabled="False" FontSize="20" Foreground="Black" FontFamily="Sitka Display" FontWeight="Bold" Width="194" HorizontalContentAlignment="Center"/>
+            <Button x:Name="res_increment" Content="+" HorizontalAlignment="Left" Margin="236,56,0,0" VerticalAlignment="Top" Height="36" Width="50" FontSize="24"/>
+            <Button x:Name="res_decrement" Content="-" HorizontalAlignment="Left" Margin="236,94,0,0" VerticalAlignment="Top" Height="36" Width="50" FontSize="24"/>
+            <TextBox x:Name="res_amount" HorizontalAlignment="Left" Margin="166,55,0,0" TextWrapping="Wrap" Text="-2" VerticalAlignment="Top" Width="70" Height="73" FontSize="36"/>
+            <CheckBox x:Name="immune_checkbox" Content="Immune" HorizontalAlignment="Left" Margin="298,28,0,0" VerticalAlignment="Top" Height="35" Width="114" FontSize="20"/>
+            <Button x:Name="close_add_resists_button_Copy" Content="Add" HorizontalAlignment="Left" Margin="319,77,0,0" VerticalAlignment="Top" Height="50" Width="93" FontSize="24" Click="AddResToWarp"/>
+        </Grid>
+        <Image HorizontalAlignment="Left" Height="43" Margin="674,181,0,0" VerticalAlignment="Top" Width="44" Source="/Icons/game_skill_ui_guard_shield-512.png"/>
+        <Grid Margin="0,0,0,650" Background="#FF24420C">
+            <Border BorderBrush="Black" BorderThickness="1"/>
+        </Grid>
+    </Grid>
+</Window>
